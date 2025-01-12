@@ -1,0 +1,318 @@
+html {
+    margin: 0;
+    width:100%;
+}
+
+body {
+    color:#0B0A08;
+    text-align: center;
+    margin:0;
+    width:100%;
+}
+.nav, .landingPage, .seasonalSelection, .askUs {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Text styles */
+h1 {font-family: Frank Ruhl Libre; font-size: 200px; text-transform:uppercase; font-weight: lighter;}
+h2 {font-family: Arimo;font-size: 36px; text-transform:uppercase; font-weight: normal;}
+h3 {font-family: Arimo; font-size: 20px; text-transform:uppercase; font-weight: normal;}
+h4 {font-family: Frank Ruhl Libre; font-size: 20px; font-weight: lighter;}
+h5 {font-family: Arimo; font-size: 20px; font-weight: normal;}
+p  {font-family: Arimo;font-size: 16px; font-weight: normal;}
+
+
+/* Header og nav */
+header {
+  border-bottom:1px solid #0B0A08;
+  display: flex;
+  width: 100%;
+  padding: 16px 32px;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#F7F2DE;
+}
+
+  .nav {
+    width:100%;
+    margin-inline: auto; 
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    height: 68px;
+    background-color:#F7F2DE;
+}
+
+  span:hover {
+    opacity:40%;
+}
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #008F51;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    justify-content: flex-end;
+    transition: 0.3s;
+    font-family: Arimo; 
+    font-size: 36px; 
+    text-transform:uppercase; 
+    font-weight: normal;
+}
+  .sidenav a:hover {
+    text-decoration: underline;
+}
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 36px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+  .sidenav .products{
+    padding-top: 130px;
+    padding-bottom: 20px;
+    margin-top: 8px;
+    border-top:2px solid #0B0A08;
+  }
+  .sidenav .checkout{
+    padding-top: 310px;
+}
+
+  .checkoutBtn {
+    background-color: #008F51;
+    cursor: pointer;
+    border-radius: 45%;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+/* FRAM page */
+.landingPage {
+  color:white;
+  width: 100%;
+  height: 850px;
+  background: url('Exam Project/Images/Landing Page/markus-spiske-WcLzVLbUP5g-unsplash.jpg')  
+  lightgray 50% / cover no-repeat;
+  flex-shrink: 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+  .tittel {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .vl {
+    border-left: 2px solid white;
+    height: 200px;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .subTittel {
+    position: absolute;
+    top: 620px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .landingPage img{
+    width: 100%;
+    height:800px;
+    overflow:hidden;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    overflow: hidden;
+    width:100%;
+    display: none;
+  }
+
+
+/* secondPage */
+
+.secondPage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.secondPage button {
+  color:white;
+  width:320px;
+  height:45;
+  border-radius:5%;
+  background-color:#DC4131;
+  
+}
+.secondPage a{
+  text-decoration: none;
+}
+
+.seasonalSelection{
+  display: flex;
+  padding: 90px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  flex: 1 0 0;margin-top:90px; 
+}
+
+.seasonalSelection img{
+  width:448px;
+  height:327px;
+  border-radius: 5%;
+  margin: 45px
+}
+
+.seasonalSelection button:hover{
+  background-color:#AE2E21;
+}
+  
+ 
+.askUs {
+  display: flex;
+  padding: 90px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  flex: 1 0 0;
+  border-left: 1px solid #000;
+}
+.askUs img {
+  width:448px;
+  height:327px;
+  border-radius: 5%;
+  margin: 45px;
+}
+
+/* Chatbox */
+
+.chatbox-style {
+  color:white;
+  width: 100%;
+  height: 850px;
+  background: url('Exam Project/Images/Landing Page/markus-spiske-WcLzVLbUP5g-unsplash.jpg')  
+  lightgray 50% / cover no-repeat;
+  flex-shrink: 0;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatbox-container {
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.chatbox-body {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  height: 300px;
+  border-bottom: 1px solid #ccc;
+}
+
+.chatbox-footer {
+  display: flex;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.chatbox-footer input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.chatbox-footer button {
+  width: 15%;
+  padding: 10px;
+  margin-left: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chatbox-footer button:hover {
+  background-color: #45a049;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  max-width: 70%;
+}
+
+.user-message {
+  background-color: #d1f7c4;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+}
+
+/* 
+farger:
+Secondary Background & text #FFFFFF
+Rød button #DC4131 + #AE2E21 hover
+Lys BLå #E1EAF0
+Grønn #008F51
+
+fonts:
+Frank Ruhl Libre, Light
+Arimo
+*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
