@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors()); // To allow the frontend to send requests
 
-const OPENAI_API_KEY = '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'; // Replace this with your OpenAI API key
+const OPENAI_API_KEY = ''; // Replace this with your OpenAI API key
 
 app.post('/api/openai', async (req, res) => {
     const { userInput } = req.body;

@@ -1,5 +1,5 @@
 
-
+// Side nav i header
 function openNav() {
   document.getElementById("mySidenav").style.width = "450px";
 }
@@ -8,51 +8,55 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
-function handleFormSubmit(event) {
-  event.preventDefault();  // Prevents the form from reloading the page
 
-  // Hide the form
+// Form med imputs i footer
+function handleFormSubmit(event) {
+  event.preventDefault();  // Gjør at siden ikke reloader
+
+  // Gjemmer form
   document.getElementById('form-container').style.display = 'none';
 
-  // Show the thank-you message
+  // Viser takk melding
   document.getElementById('thank-you-message').style.display = 'block';
 }
 
-// Chatbox
+
+// Chatboks
 const sendButton = document.getElementById('sendBtn');
 const messageInput = document.getElementById('messageInput');
 const chatboxBody = document.getElementById('chatbox-body');
 
-// Send message function
+// Meldingsfunksjon
 async function sendMessage() {
   const message = messageInput.value.trim();
   if (message) {
-    // Create message div
+
+    // Lag melding div
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('user-message');
     messageDiv.textContent = message;
 
-    // Append message to chatbox
+    // Append til chatboks
     chatboxBody.appendChild(messageDiv);
 
-    // Scroll to bottom
+    // Scroll to bunn
     chatboxBody.scrollTop = chatboxBody.scrollHeight;
 
-    // Clear input field
+    // Rens input field
     messageInput.value = '';
 
-    // Change send button icon to 'X'
+    // Endrer send knapp icon til 'X'
     const sendIcon = document.getElementById('sendIcon');
     sendIcon.classList.remove('fa-arrow-up');
     sendIcon.classList.add('fa-times');
 
-    // Add a loading message to indicate waiting for bot's response
+    // ... mens man venter
     const loadingMessageDiv = document.createElement('div');
     loadingMessageDiv.classList.add('bot-message', 'loading');
     loadingMessageDiv.textContent = '...'; // Display "..."
     chatboxBody.appendChild(loadingMessageDiv);
 
-    // Make request to the backend (which will call OpenAI)
+    // Forespørsel til backend (call på OpenAI)
     try {
       const response = await fetch('http://localhost:3000/api/openai', {
         method: 'POST',
@@ -64,16 +68,28 @@ async function sendMessage() {
 
       const data = await response.json();
 
-      // Process OpenAI's response and append to chatbox
-      const botMessageDiv = document.createElement('div');
-      botMessageDiv.classList.add('bot-message');
-      botMessageDiv.textContent = data.answer; // Assuming "answer" is the key
-      chatboxBody.appendChild(botMessageDiv);
+      // Processerer OpenAI sitt svar og append til chatboks
+      const messageContainer = document.createElement('div');
+      const botResponse = document.createElement('p');
+      const botLogo = document.createElement('h4');
+      botLogo.style.display = 'inline-block';  
 
-      // Scroll to bottom
+      messageContainer.classList.add('message-container');
+      botResponse.classList.add('startmessage');
+      botLogo.classList.add('logo');
+
+      messageContainer.appendChild(botResponse);
+      messageContainer.appendChild(botLogo);
+
+      botResponse.textContent = data.answer; // Anntar at "answer" er nøkkelen
+
+      chatboxBody.appendChild(messageContainer);
+
+      // Scroll til bunn
       chatboxBody.scrollTop = chatboxBody.scrollHeight;
+      loadingMessageDiv.remove();
 
-      // Reset the button icon back to the send arrow
+      // Bytter icon tilbake til pil fra X
       sendIcon.classList.remove('fa-times');
       sendIcon.classList.add('fa-arrow-up');
 
@@ -83,7 +99,7 @@ async function sendMessage() {
   }
 }
 
-// Event listener for button click
+// Event listener knappe
 sendButton.addEventListener('click', sendMessage);
 
 // Event listener for pressing the Enter key in the input field
