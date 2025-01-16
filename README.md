@@ -35,4 +35,3 @@ How to Fix:
 
 Backend Code (Node.js Example with Express):
 This will be the server handling your OpenAI API request securely.
-
